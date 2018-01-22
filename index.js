@@ -11,20 +11,10 @@ import {
 
 const HEIGHT = Dimensions.get('window').height
 
-class Row extends React.Component {
+class Row extends React.PureComponent {
   constructor(props) {
     super(props)
     this._data = {}
-  }
-
-  shouldComponentUpdate(props) {
-    if (props.hovering !== this.props.hovering) return true
-    if (props.active !== this.props.active) return true
-    if (props.rowData.data !== this.props.rowData.data) return true
-    if (props.rowHasChanged) {
-      return props.rowHasChanged(props.rowData.data, this._data)
-    }
-    return false
   }
 
   handlePress = e => {
@@ -100,7 +90,7 @@ class Row extends React.Component {
   }
 }
 
-class SortRow extends React.Component {
+class SortRow extends React.PureComponent {
   constructor(props) {
     super(props)
     const layout = props.list.state.active.layout
@@ -142,7 +132,7 @@ class SortRow extends React.Component {
   }
 }
 
-class SortableListView extends React.Component {
+class SortableListView extends React.PureComponent {
   constructor(props, context) {
     super(props, context)
 
