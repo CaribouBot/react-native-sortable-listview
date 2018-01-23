@@ -132,7 +132,7 @@ class SortRow extends React.PureComponent {
   }
 }
 
-class SortableListView extends React.PureComponent {
+export default class SortableListView extends React.PureComponent {
   constructor(props, context) {
     super(props, context)
 
@@ -502,5 +502,3 @@ class SortableListView extends React.PureComponent {
     this.refs.list.getScrollResponder()
   }
 }
-
-module.exports = SortableListView
